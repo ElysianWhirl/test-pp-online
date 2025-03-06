@@ -97,8 +97,18 @@ proxy-groups:
   url: 'http://cp.cloudflare.com/generate_204'
   interval: '300'
 #================================#
-- name: UMUM 🌐
+- name: Relay Proxy
+  type: relay
+  disable-udp: false
+  proxies:
+  - PP1
+  - PP2
+  url: 'http://cp.cloudflare.com/generate_204'
+  interval: '1'
+#================================#
+- name: ETH1
   type: select
+  interface-name: eth1
   disable-udp: false
   proxies:
   - PP1
@@ -120,8 +130,292 @@ proxy-groups:
   - LB PP5
   - LB PP6
   - Relay Proxy PP1 > PP2
+  - REJECT
+  - DIRECT
+  url: 'http://www.gstatic.com/generate_204'
+  interval: '300'
+- name: MACVLAN
+  type: select
+  interface-name: macvlan
+  disable-udp: false
+  proxies:
+  - PP1
+  - PP2
+  - PP3
+  - PP4
+  - PP5
+  - PP6
+  - Ping PP1
+  - Ping PP2
+  - Ping PP3
+  - Ping PP4 
+  - Ping PP5
+  - Ping PP6
+  - LB PP1
+  - LB PP2
+  - LB PP3
+  - LB PP4
+  - LB PP5
+  - LB PP6
+  - Relay Proxy PP1 > PP2
+  - REJECT
+  - DIRECT
+  url: 'http://www.gstatic.com/generate_204'
+  interval: '300'
+- name: USB0
+  type: select
+  interface-name: usb0
+  disable-udp: false
+  proxies:
+  - PP1
+  - PP2
+  - PP3
+  - PP4
+  - PP5
+  - PP6
+  - Ping PP1
+  - Ping PP2
+  - Ping PP3
+  - Ping PP4 
+  - Ping PP5
+  - Ping PP6
+  - LB PP1
+  - LB PP2
+  - LB PP3
+  - LB PP4
+  - LB PP5
+  - LB PP6
+  - Relay Proxy PP1 > PP2
+  - REJECT
+  - DIRECT
+  url: 'http://www.gstatic.com/generate_204'
+  interval: '300'
+- name: USB1
+  type: select
+  interface-name: usb1
+  disable-udp: false
+  proxies:
+  - PP1
+  - PP2
+  - PP3
+  - PP4
+  - PP5
+  - PP6
+  - Ping PP1
+  - Ping PP2
+  - Ping PP3
+  - Ping PP4 
+  - Ping PP5
+  - Ping PP6
+  - LB PP1
+  - LB PP2
+  - LB PP3
+  - LB PP4
+  - LB PP5
+  - LB PP6
+  - Relay Proxy PP1 > PP2
+  - REJECT
+  - DIRECT
+  url: 'http://www.gstatic.com/generate_204'
+  interval: '300'
+#================================#
+- name: LB ETH1 & MACVLAN & USB0 & USB1
+  type: load-balance
+  strategy: round-robin
+  disable-udp: false
+  proxies:
+  - USB0
+  - USB1
+  - ETH1
+  - MACVLAN
+  url: 'http://www.gstatic.com/generate_204'
+  interval: '1'
+#================================#
+- name: UMUM 🌐
+  type: select
+  disable-udp: false
+  proxies:
+  - LB ETH1 & MACVLAN & USB0 & USB1
+  - PP1
+  - PP2
+  - PP3
+  - PP4
+  - PP5
+  - PP6
+  - Ping PP1
+  - Ping PP2
+  - Ping PP3
+  - Ping PP4 
+  - Ping PP5
+  - Ping PP6
+  - LB PP1
+  - LB PP2
+  - LB PP3
+  - LB PP4
+  - LB PP5
+  - LB PP6
+  - ETH1
+  - MACVLAN
+  - USB0
+  - USB1
+  - Relay Proxy PP1 > PP2
   url: 'http://cp.cloudflare.com/generate_204'
-  interval: '180'
+  interval: '300'
+#================================#
+- name: Games 🎮
+  type: select
+  disable-udp: false
+  proxies:
+  - Home 🌐
+  - PP1
+  - PP2
+  - PP3
+  - PP4
+  - PP5
+  - PP6
+  - Ping PP1
+  - Ping PP2
+  - Ping PP3
+  - Ping PP4 
+  - Ping PP5
+  - Ping PP6
+  - LB PP1
+  - LB PP2
+  - LB PP3
+  - LB PP4
+  - LB PP5
+  - LB PP6
+  - ETH1
+  - MACVLAN
+  - USB0
+  - USB1
+  - Relay Proxy PP1 > PP2
+  url: 'http://cp.cloudflare.com/generate_204'
+  interval: '300'
+#================================#
+- name: Sosmed 🔔
+  type: select
+  disable-udp: false
+  proxies:
+  - Home 🌐
+  - PP1
+  - PP2
+  - PP3
+  - PP4
+  - PP5
+  - PP6
+  - Ping PP1
+  - Ping PP2
+  - Ping PP3
+  - Ping PP4 
+  - Ping PP5
+  - Ping PP6
+  - LB PP1
+  - LB PP2
+  - LB PP3
+  - LB PP4
+  - LB PP5
+  - LB PP6
+  - ETH1
+  - MACVLAN
+  - USB0
+  - USB1
+  - Relay Proxy PP1 > PP2
+  url: 'http://cp.cloudflare.com/generate_204'
+  interval: '300'
+#================================#
+- name: Streaming 🎬
+  type: select
+  disable-udp: false
+  proxies:
+  - Home 🌐
+  - PP1
+  - PP2
+  - PP3
+  - PP4
+  - PP5
+  - PP6
+  - Ping PP1
+  - Ping PP2
+  - Ping PP3
+  - Ping PP4 
+  - Ping PP5
+  - Ping PP6
+  - LB PP1
+  - LB PP2
+  - LB PP3
+  - LB PP4
+  - LB PP5
+  - LB PP6
+  - ETH1
+  - MACVLAN
+  - USB0
+  - USB1
+  - Relay Proxy PP1 > PP2
+  url: 'http://cp.cloudflare.com/generate_204'
+  interval: '300'
+#================================#
+- name: Online Shop 🛒
+  type: select
+  disable-udp: false
+  proxies:
+  - Home 🌐
+  - PP1
+  - PP2
+  - PP3
+  - PP4
+  - PP5
+  - PP6
+  - Ping PP1
+  - Ping PP2
+  - Ping PP3
+  - Ping PP4 
+  - Ping PP5
+  - Ping PP6
+  - LB PP1
+  - LB PP2
+  - LB PP3
+  - LB PP4
+  - LB PP5
+  - LB PP6
+  - ETH1
+  - MACVLAN
+  - USB0
+  - USB1
+  - Relay Proxy PP1 > PP2
+  url: 'http://cp.cloudflare.com/generate_204'
+  interval: '300'
+#================================#
+- name: MBanking 💲
+  type: select
+  disable-udp: false
+  proxies:
+  - Home 🌐
+  - PP1
+  - PP2
+  - PP3
+  - PP4
+  - PP5
+  - PP6
+  - Ping PP1
+  - Ping PP2
+  - Ping PP3
+  - Ping PP4 
+  - Ping PP5
+  - Ping PP6
+  - LB PP1
+  - LB PP2
+  - LB PP3
+  - LB PP4
+  - LB PP5
+  - LB PP6
+  - ETH1
+  - MACVLAN
+  - USB0
+  - USB1
+  - Relay Proxy PP1 > PP2
+  url: 'http://cp.cloudflare.com/generate_204'
+  interval: '300'
 #================================#
 - name: Ping PP1
   type: url-test
@@ -222,7 +516,7 @@ proxy-groups:
   - REJECT
   - Home 🌐
   url: 'http://www.gstatic.com/generate_204'
-  interval: '180'
+  interval: '300'
 #================================#
 rule-providers:
   BlockAds:
