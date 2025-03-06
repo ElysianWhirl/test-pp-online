@@ -97,7 +97,7 @@ proxy-groups:
   url: 'http://cp.cloudflare.com/generate_204'
   interval: '300'
 #================================#
-- name: Relay Proxy
+- name: Relay Proxy PP1 > PP2
   type: relay
   disable-udp: false
   proxies:
