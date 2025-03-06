@@ -1,0 +1,267 @@
+proxy-providers:
+  PP1:
+    type: http
+    url: 
+    path: "./proxy_provider/PP1.yaml"
+    health-check:
+      enable: true
+      url: http://www.gstatic.com/generate_204
+      interval: 300
+  PP2:
+    type: http
+    url: 
+    path: "./proxy_provider/PP2.yaml"
+    health-check:
+      enable: true
+      url: http://www.gstatic.com/generate_204
+      interval: 300
+  PP3:
+    type: http
+    url: 
+    path: "./proxy_provider/PP3.yaml"
+    health-check:
+      enable: true
+      url: http://www.gstatic.com/generate_204
+      interval: 300
+  PP4:
+    type: http
+    url: 
+    path: "./proxy_provider/PP4.yaml"
+    health-check:
+      enable: true
+      url: http://www.gstatic.com/generate_204
+      interval: 300
+  PP5:
+    type: http
+    url: 
+    path: "./proxy_provider/PP5.yaml"
+    health-check:
+      enable: true
+      url: http://www.gstatic.com/generate_204
+      interval: 300
+  PP6:
+    type: http
+    url: 
+    path: "./proxy_provider/PP6.yaml"
+    health-check:
+      enable: true
+      url: http://www.gstatic.com/generate_204
+      interval: 300
+
+proxy-groups:
+- name: PP1
+  type: select
+  disable-udp: false
+  use:
+  - PP1
+  url: 'http://cp.cloudflare.com/generate_204'
+  interval: '300'
+
+- name: PP2
+  type: select
+  disable-udp: false
+  use:
+  - PP2
+  url: 'http://cp.cloudflare.com/generate_204'
+  interval: '300'
+  
+- name: PP3
+  type: select
+  disable-udp: false
+  use:
+  - PP3
+  url: 'http://cp.cloudflare.com/generate_204'
+  interval: '300'
+
+- name: PP4
+  type: select
+  disable-udp: false
+  use:
+  - PP4
+  url: 'http://cp.cloudflare.com/generate_204'
+  interval: '300'
+  
+- name: PP5
+  type: select
+  disable-udp: false
+  use:
+  - PP5
+  url: 'http://cp.cloudflare.com/generate_204'
+  interval: '300'
+
+- name: PP6
+  type: select
+  disable-udp: false
+  use:
+  - PP6
+  url: 'http://cp.cloudflare.com/generate_204'
+  interval: '300'
+#================================#
+- name: UMUM 🌐
+  type: select
+  disable-udp: false
+  proxies:
+  - PP1
+  - PP2
+  - PP3
+  - PP4
+  - PP5
+  - PP6
+  - Ping PP1
+  - Ping PP2
+  - Ping PP3
+  - Ping PP4 
+  - Ping PP5
+  - Ping PP6
+  - LB PP1
+  - LB PP2
+  - LB PP3
+  - LB PP4
+  - LB PP5
+  - LB PP6
+  - Relay Proxy PP1 > PP2
+  url: 'http://cp.cloudflare.com/generate_204'
+  interval: '180'
+#================================#
+- name: Ping PP1
+  type: url-test
+  disable-udp: false
+  use:
+  - PP1
+  url: 'http://www.gstatic.com/generate_204'
+  interval: '1'
+- name: Ping PP2
+  type: url-test
+  disable-udp: false
+  use:
+  - PP2
+  url: 'http://www.gstatic.com/generate_204'
+  interval: '1'
+- name: Ping PP3
+  type: url-test
+  disable-udp: false
+  use:
+  - PP3
+  url: 'http://www.gstatic.com/generate_204'
+  interval: '1'
+- name: Ping PP4
+  type: url-test
+  disable-udp: false
+  use:
+  - PP4
+  url: 'http://www.gstatic.com/generate_204'
+  interval: '1'
+- name: Ping PP5
+  type: url-test
+  disable-udp: false
+  use:
+  - PP5
+  url: 'http://www.gstatic.com/generate_204'
+  interval: '1'
+- name: Ping PP6
+  type: url-test
+  disable-udp: false
+  use:
+  - PP6
+  url: 'http://www.gstatic.com/generate_204'
+  interval: '1'
+#================================#
+- name: LB PP1
+  type: load-balance
+  strategy: round-robin
+  disable-udp: false
+  use:
+  - PP1
+  url: 'http://www.gstatic.com/generate_204'
+  interval: '1'
+- name: LB PP2
+  type: load-balance
+  strategy: round-robin
+  disable-udp: false
+  use:
+  - PP2
+  url: 'http://www.gstatic.com/generate_204'
+  interval: '1'
+- name: LB PP3
+  type: load-balance
+  strategy: round-robin
+  disable-udp: false
+  use:
+  - PP3
+  url: 'http://www.gstatic.com/generate_204'
+  interval: '1'
+- name: LB PP4
+  type: load-balance
+  strategy: round-robin
+  disable-udp: false
+  use:
+  - PP4
+  url: 'http://www.gstatic.com/generate_204'
+  interval: '1'
+- name: LB PP5
+  type: load-balance
+  strategy: round-robin
+  disable-udp: false
+  use:
+  - PP5
+  url: 'http://www.gstatic.com/generate_204'
+  interval: '1'
+- name: LB PP6
+  type: load-balance
+  strategy: round-robin
+  disable-udp: false
+  use:
+  - PP6
+  url: 'http://www.gstatic.com/generate_204'
+  interval: '1'
+#================================#
+- name: BLOCK ADS
+  type: select
+  disable-udp: false
+  proxies:
+  - REJECT
+  - Home 🌐
+  url: 'http://www.gstatic.com/generate_204'
+  interval: '180'
+#================================#
+rule-providers:
+  BlockAds:
+    type: file
+    behavior: classical
+    url: 
+    path: "./rule_provider/rules-blockads.yaml"
+  Game:
+    type: file
+    behavior: classical
+    url:
+    path: ./rule_provider/rules-game.yaml
+  Sosmed:
+    type: file
+    behavior: classical
+    url:
+    path: ./rule_provider/rules-sosmed.yaml
+  Stream:
+    type: file
+    behavior: classical
+    url:
+    path: ./rule_provider/rules-stream.yaml
+  Olshop:
+    type: file
+    behavior: classical
+    url:
+    path: ./rule_provider/rules-olshop.yaml
+  Bank:
+    type: file
+    behavior: classical
+    url:
+    path: ./rule_provider/rules-bank.yaml
+
+#================================#
+rules:
+- RULE-SET,BlockAds,BLOCK ADS
+- RULE-SET,Game,Games 🎮
+- RULE-SET,Sosmed,Sosmed 🔔
+- RULE-SET,Stream,Streaming 🎬
+- RULE-SET,Olshop,Online Shop 🛒
+- RULE-SET,Bank,MBanking 💲
+- MATCH,Home 🌐
