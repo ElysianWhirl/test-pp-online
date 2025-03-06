@@ -1,0 +1,102 @@
+payload:
+
+  # > WHATSAPP
+  - DOMAIN-KEYWORD,whatsapp
+  - DOMAIN-KEYWORD,whatsapp.net
+  - DOMAIN-KEYWORD,whatsappcdn
+  - DOMAIN-KEYWORD,web.whatsapp
+  - DOMAIN-KEYWORD,mmg.whatsapp.net
+  - DOMAIN-SUFFIX,whatsapp.com
+  - DOMAIN-SUFFIX,whatsapp.net
+  - DST-PORT,3478
+  - DST-PORT,5222
+  - DST-PORT,4244
+  - DST-PORT,50318
+  - DST-PORT,59234
+  - DST-PORT,62545
+
+  # > FACEBOOK & INSTAGRAM
+  - DOMAIN-KEYWORD,facebook
+  - DOMAIN-KEYWORD,instagram
+  - DOMAIN-KEYWORD,cdninstagram
+  - DOMAIN-SUFFIX,facebook.com
+  - DOMAIN-SUFFIX,fbcdn.net
+  - DOMAIN-SUFFIX,instagram.com
+
+  # > TWITTER
+  - DOMAIN-KEYWORD,twitter
+  - DOMAIN-KEYWORD,twimg
+  - DOMAIN-SUFFIX,twitter.com
+
+  # > TIKTOK
+  - DOMAIN-KEYWORD,tiktok
+  - DOMAIN-KEYWORD,tiktokcdn
+  - DOMAIN-SUFFIX,tiktok.com
+  - DOMAIN-SUFFIX,tiktokv.com
+
+  # > LINKEDIN
+  - DOMAIN-KEYWORD,linkedin
+  - DOMAIN-SUFFIX,linkedin.com
+  - DOMAIN-SUFFIX,licdn.com
+
+  # > INSTAGRAM
+  - DOMAIN-KEYWORD,cdninstagram
+  - DOMAIN-KEYWORD,instagram
+
+  # > FACEBOOK
+  - DOMAIN-KEYWORD,messenger
+  - DOMAIN-KEYWORD,facebook
+  - DOMAIN-KEYWORD,fb
+  - DOMAIN-KEYWORD,fbaddins
+  - DOMAIN-KEYWORD,fbcdn
+  - DOMAIN-KEYWORD,fbsbx
+  - DOMAIN-KEYWORD,fbworkmail
+  - DOMAIN-KEYWORD,facebookmail
+  - DOMAIN-KEYWORD,m.me
+  - DOMAIN-KEYWORD,oculus
+  - DOMAIN-KEYWORD,oculuscdn
+  - DOMAIN-KEYWORD,rocksdb
+  
+  # > LINE
+  - DOMAIN-KEYWORD,lin
+  - DOMAIN-KEYWORD,line
+  - DOMAIN-KEYWORD,line-apps
+  - DOMAIN-KEYWORD,line-cdn
+  - DOMAIN-KEYWORD,line-scdn
+  - DOMAIN-KEYWORD,nhncorp
+  - DOMAIN-KEYWORD,naver.jp
+  
+  # > TELEGRAM
+  - DOMAIN-KEYWORD,telegra
+  - DOMAIN-KEYWORD,telegram
+  - DOMAIN-KEYWORD,t.me
+  - DOMAIN-KEYWORD,tdesktop
+  - DOMAIN-KEYWORD,telesco
+  
+  # > TWITTER
+  - DOMAIN-KEYWORD,pscp
+  - DOMAIN-KEYWORD,periscope
+  - DOMAIN-KEYWORD,t.co
+  - DOMAIN-KEYWORD,twimg
+  - DOMAIN-KEYWORD,twimg
+  - DOMAIN-KEYWORD,twitpic
+  - DOMAIN-KEYWORD,twitter
+  - DOMAIN-KEYWORD,vine
+  - DOMAIN-KEYWORD,twitter
+  - DOMAIN-KEYWORD,twttr
+  - DOMAIN-KEYWORD,twttr
+  - DOMAIN-KEYWORD,twitter
+  
+  # > SNACKVIDEO
+  - DOMAIN-KEYWORD,snackvideo
+  
+  # > TikTok
+  - DOMAIN-KEYWORD,byteoversea
+  - DOMAIN-KEYWORD,ibytedtos
+  - DOMAIN-KEYWORD,ipstatp
+  - DOMAIN-KEYWORD,muscdn
+  - DOMAIN-KEYWORD,musical
+  - DOMAIN-KEYWORD,tiktok
+  - DOMAIN-KEYWORD,tiktokcdn
+  - DOMAIN-KEYWORD,tiktokv
+  - DOMAIN-KEYWORD,-tiktokcdn-com
