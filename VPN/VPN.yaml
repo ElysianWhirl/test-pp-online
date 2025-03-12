@@ -1,3 +1,4 @@
+
 proxy-providers:
   VPN1:
     type: file
@@ -81,6 +82,8 @@ proxy-groups:
       - VPN2
       - VPN3
       - VPN4
+    url: "http://www.gstatic.com/generate_204"
+    interval: 1
 
 rules:
   # Semua Lalu Lintas Default ke Auto-Fast
