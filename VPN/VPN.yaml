@@ -1,0 +1,87 @@
+proxy-providers:
+  VPN1:
+    type: file
+    path: "./proxy_provider/vpn/VPN1.yaml"
+    health-check:
+      enable: true
+      url: 'http://www.gstatic.com/generate_204'
+      interval: '300'
+  VPN2:
+    type: file
+    path: "./proxy_provider/vpn/VPN2.yaml"
+    health-check:
+      enable: true
+      url: 'http://www.gstatic.com/generate_204'
+      interval: '300'
+  VPN3:
+    type: file
+    path: "./proxy_provider/vpn/VPN3.yaml"
+    health-check:
+      enable: true
+      url: 'http://www.gstatic.com/generate_204'
+      interval: '300'
+  VPN4:
+    type: file
+    path: "./proxy_provider/vpn/VPN4.yaml"
+    health-check:
+      enable: true
+      url: 'http://www.gstatic.com/generate_204'
+      interval: '300'
+
+proxy-groups:
+
+  - name: VPN1
+    type: select
+    disable-udp: false
+    use:
+      - VPN1
+    url: 'http://cp.cloudflare.com/generate_204'
+    interval: '300'
+    
+  - name: VPN2
+    type: select
+    disable-udp: false
+    use:
+      - VPN2
+    url: 'http://cp.cloudflare.com/generate_204'
+    interval: '300'
+    
+  - name: VPN3
+    type: select
+    disable-udp: false
+    use:
+      - VPN3
+    url: 'http://cp.cloudflare.com/generate_204'
+    interval: '300'
+    
+  - name: VPN4
+    type: select
+    disable-udp: false
+    use:
+      - VPN4
+    url: 'http://cp.cloudflare.com/generate_204'
+    interval: '300'
+
+  # Grup Berdasarkan Jenis Koneksi
+  - name: Auto-Fast
+    type: url-test
+    proxies:
+      - VPN1
+      - VPN2
+      - VPN3
+      - VPN4
+    url: "http://www.gstatic.com/generate_204"
+    interval: 1
+
+  - name: Manual-Select
+    type: select
+    proxies:
+      - Auto-Fast
+      - VPN1
+      - VPN2
+      - VPN3
+      - VPN4
+
+rules:
+  # Semua Lalu Lintas Default ke Auto-Fast
+  - MATCH,Manual-Select
