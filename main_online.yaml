@@ -266,7 +266,7 @@ proxy-groups:
   type: select
   disable-udp: false
   proxies:
-  - Home 🌐
+  - UMUM 🌐
   - PP1
   - PP2
   - PP3
@@ -297,7 +297,7 @@ proxy-groups:
   type: select
   disable-udp: false
   proxies:
-  - Home 🌐
+  - UMUM 🌐
   - PP1
   - PP2
   - PP3
@@ -328,7 +328,7 @@ proxy-groups:
   type: select
   disable-udp: false
   proxies:
-  - Home 🌐
+  - UMUM 🌐
   - PP1
   - PP2
   - PP3
@@ -359,7 +359,7 @@ proxy-groups:
   type: select
   disable-udp: false
   proxies:
-  - Home 🌐
+  - UMUM 🌐
   - PP1
   - PP2
   - PP3
@@ -390,7 +390,7 @@ proxy-groups:
   type: select
   disable-udp: false
   proxies:
-  - Home 🌐
+  - UMUM 🌐
   - PP1
   - PP2
   - PP3
@@ -558,4 +558,4 @@ rules:
 - RULE-SET,Stream,Streaming 🎬
 - RULE-SET,Olshop,Online Shop 🛒
 - RULE-SET,Bank,MBanking 💲
-- MATCH,Home 🌐
+- MATCH,UMUM 🌐
