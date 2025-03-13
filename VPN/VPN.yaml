@@ -72,8 +72,9 @@ proxy-groups:
       - VPN3
       - VPN4
     url: "http://www.gstatic.com/generate_204"
-    interval: 1
-
+    interval: '1'
+    tolerance: '1'
+    
   - name: Manual-Select
     type: select
     proxies:
@@ -82,9 +83,83 @@ proxy-groups:
       - VPN2
       - VPN3
       - VPN4
+      - Ping-VPN1
+      - Ping-VPN2
+      - Ping-VPN3
+      - Ping-VPN4
+      - LB-VPN1
+      - LB-VPN2
+      - LB-VPN3
+      - LB-VPN4
     url: "http://www.gstatic.com/generate_204"
-    interval: 1
-
+    interval: '1'
+    
+#--------Best-Ping-----------#    
+  - name: Ping-VPN1
+    type: url-test
+    proxies:
+      - VPN1
+    url: "http://www.gstatic.com/generate_204"
+    interval: '1'
+    tolerance: '1'
+  - name: Ping-VPN2
+    type: url-test
+    proxies:
+      - VPN2
+    url: "http://www.gstatic.com/generate_204"
+    interval: '1'
+    tolerance: '1'
+  - name: Ping-VPN3
+    type: url-test
+    proxies:
+      - VPN3
+    url: "http://www.gstatic.com/generate_204"
+    interval: '1'
+    tolerance: '1'
+  - name: Ping-VPN4
+    type: url-test
+    proxies:
+      - VPN4
+    url: "http://www.gstatic.com/generate_204"
+    interval: '1'
+    tolerance: '1'
+#------Loaad-Balance-----------#
+  - name: LB-VPN1
+    type: load-balance
+    strategy: round-robin
+    disable-udp: false
+    use:
+      - VPN1
+    url: 'http://www.gstatic.com/generate_204'
+    interval: '1'
+    tolerance: '1'
+  - name: LB-VPN2
+    type: load-balance
+    strategy: round-robin
+    disable-udp: false
+    use:
+      - VPN2
+    url: 'http://www.gstatic.com/generate_204'
+    interval: '1'
+    tolerance: '1'
+  - name: LB-VPN3
+    type: load-balance
+    strategy: round-robin
+    disable-udp: false
+    use:
+      - VPN3
+    url: 'http://www.gstatic.com/generate_204'
+    interval: '1'
+    tolerance: '1'
+  - name: LB-VPN4
+    type: load-balance
+    strategy: round-robin
+    disable-udp: false
+    use:
+      - VPN4
+    url: 'http://www.gstatic.com/generate_204'
+    interval: '1'
+    tolerance: '1'
 rules:
   # Semua Lalu Lintas Default ke Auto-Fast
   - MATCH,Manual-Select
