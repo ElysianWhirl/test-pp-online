@@ -97,28 +97,28 @@ proxy-groups:
 #--------Best-Ping-----------#    
   - name: Ping-VPN1
     type: url-test
-    proxies:
+    use:
       - VPN1
     url: "http://www.gstatic.com/generate_204"
     interval: '1'
     tolerance: '1'
   - name: Ping-VPN2
     type: url-test
-    proxies:
+    use:
       - VPN2
     url: "http://www.gstatic.com/generate_204"
     interval: '1'
     tolerance: '1'
   - name: Ping-VPN3
     type: url-test
-    proxies:
+    use:
       - VPN3
     url: "http://www.gstatic.com/generate_204"
     interval: '1'
     tolerance: '1'
   - name: Ping-VPN4
     type: url-test
-    proxies:
+    use:
       - VPN4
     url: "http://www.gstatic.com/generate_204"
     interval: '1'
