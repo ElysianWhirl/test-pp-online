@@ -97,6 +97,7 @@ proxy-groups:
 #--------Best-Ping-----------#    
   - name: Ping-VPN1
     type: url-test
+    disable-udp: false
     use:
       - VPN1
     url: "http://www.gstatic.com/generate_204"
@@ -104,6 +105,7 @@ proxy-groups:
     tolerance: '1'
   - name: Ping-VPN2
     type: url-test
+    disable-udp: false
     use:
       - VPN2
     url: "http://www.gstatic.com/generate_204"
@@ -111,6 +113,7 @@ proxy-groups:
     tolerance: '1'
   - name: Ping-VPN3
     type: url-test
+    disable-udp: false
     use:
       - VPN3
     url: "http://www.gstatic.com/generate_204"
@@ -118,6 +121,7 @@ proxy-groups:
     tolerance: '1'
   - name: Ping-VPN4
     type: url-test
+    disable-udp: false
     use:
       - VPN4
     url: "http://www.gstatic.com/generate_204"
