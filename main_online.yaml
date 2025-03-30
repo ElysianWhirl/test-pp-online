@@ -47,6 +47,22 @@ proxy-providers:
       enable: true
       url: http://www.gstatic.com/generate_204
       interval: 300
+  PP7:
+    type: http
+    url: https://raw.githubusercontent.com/ElysianWhirl/test-pp-online/refs/heads/main/proxy_provider/PP7.yaml
+    path: "./proxy_provider/PP6.yaml"
+    health-check:
+      enable: true
+      url: http://www.gstatic.com/generate_204
+      interval: 300
+  PP8:
+    type: http
+    url: https://raw.githubusercontent.com/ElysianWhirl/test-pp-online/refs/heads/main/proxy_provider/PP8.yaml
+    path: "./proxy_provider/PP6.yaml"
+    health-check:
+      enable: true
+      url: http://www.gstatic.com/generate_204
+      interval: 300
 
 proxy-groups:
 - name: PP1
@@ -96,6 +112,22 @@ proxy-groups:
   - PP6
   url: 'http://cp.cloudflare.com/generate_204'
   interval: '300'
+
+- name: PP7
+  type: select
+  disable-udp: false
+  use:
+  - PP7
+  url: 'http://cp.cloudflare.com/generate_204'
+  interval: '300'
+
+- name: PP8
+  type: select
+  disable-udp: false
+  use:
+  - PP8
+  url: 'http://cp.cloudflare.com/generate_204'
+  interval: '300'
 #================================#
 - name: Relay Proxy PP1 > PP2
   type: relay
@@ -117,18 +149,24 @@ proxy-groups:
   - PP4
   - PP5
   - PP6
+  - PP7
+  - PP8
   - Ping PP1
   - Ping PP2
   - Ping PP3
   - Ping PP4 
   - Ping PP5
   - Ping PP6
+  - Ping PP7
+  - Ping PP8
   - LB PP1
   - LB PP2
   - LB PP3
   - LB PP4
   - LB PP5
   - LB PP6
+  - LB PP7
+  - LB PP8
   - Relay Proxy PP1 > PP2
   - REJECT
   - DIRECT
@@ -145,18 +183,24 @@ proxy-groups:
   - PP4
   - PP5
   - PP6
+  - PP7
+  - PP8
   - Ping PP1
   - Ping PP2
   - Ping PP3
   - Ping PP4 
   - Ping PP5
   - Ping PP6
+  - Ping PP7
+  - Ping PP8
   - LB PP1
   - LB PP2
   - LB PP3
   - LB PP4
   - LB PP5
   - LB PP6
+  - LB PP7
+  - LB PP8
   - Relay Proxy PP1 > PP2
   - REJECT
   - DIRECT
@@ -173,18 +217,24 @@ proxy-groups:
   - PP4
   - PP5
   - PP6
+  - PP7
+  - PP8
   - Ping PP1
   - Ping PP2
   - Ping PP3
   - Ping PP4 
   - Ping PP5
   - Ping PP6
+  - Ping PP7
+  - Ping PP8
   - LB PP1
   - LB PP2
   - LB PP3
   - LB PP4
   - LB PP5
   - LB PP6
+  - LB PP7
+  - LB PP8
   - Relay Proxy PP1 > PP2
   - REJECT
   - DIRECT
@@ -201,18 +251,24 @@ proxy-groups:
   - PP4
   - PP5
   - PP6
+  - PP7
+  - PP8
   - Ping PP1
   - Ping PP2
   - Ping PP3
   - Ping PP4 
   - Ping PP5
   - Ping PP6
+  - Ping PP7
+  - Ping PP8
   - LB PP1
   - LB PP2
   - LB PP3
   - LB PP4
   - LB PP5
   - LB PP6
+  - LB PP7
+  - LB PP8
   - Relay Proxy PP1 > PP2
   - REJECT
   - DIRECT
@@ -242,18 +298,24 @@ proxy-groups:
   - PP4
   - PP5
   - PP6
+  - PP7
+  - PP8
   - Ping PP1
   - Ping PP2
   - Ping PP3
   - Ping PP4 
   - Ping PP5
   - Ping PP6
+  - Ping PP7
+  - Ping PP8
   - LB PP1
   - LB PP2
   - LB PP3
   - LB PP4
   - LB PP5
   - LB PP6
+  - LB PP7
+  - LB PP8
   - ETH1
   - MACVLAN
   - USB0
@@ -273,18 +335,24 @@ proxy-groups:
   - PP4
   - PP5
   - PP6
+  - PP7
+  - PP8
   - Ping PP1
   - Ping PP2
   - Ping PP3
   - Ping PP4 
   - Ping PP5
   - Ping PP6
+  - Ping PP7
+  - Ping PP8
   - LB PP1
   - LB PP2
   - LB PP3
   - LB PP4
   - LB PP5
   - LB PP6
+  - LB PP7
+  - LB PP8
   - ETH1
   - MACVLAN
   - USB0
@@ -304,18 +372,24 @@ proxy-groups:
   - PP4
   - PP5
   - PP6
+  - PP7
+  - PP8
   - Ping PP1
   - Ping PP2
   - Ping PP3
   - Ping PP4 
   - Ping PP5
   - Ping PP6
+  - Ping PP7
+  - Ping PP8
   - LB PP1
   - LB PP2
   - LB PP3
   - LB PP4
   - LB PP5
   - LB PP6
+  - LB PP7
+  - LB PP8
   - ETH1
   - MACVLAN
   - USB0
@@ -335,18 +409,24 @@ proxy-groups:
   - PP4
   - PP5
   - PP6
+  - PP7
+  - PP8
   - Ping PP1
   - Ping PP2
   - Ping PP3
   - Ping PP4 
   - Ping PP5
   - Ping PP6
+  - Ping PP7
+  - Ping PP8
   - LB PP1
   - LB PP2
   - LB PP3
   - LB PP4
   - LB PP5
   - LB PP6
+  - LB PP7
+  - LB PP8
   - ETH1
   - MACVLAN
   - USB0
@@ -366,18 +446,24 @@ proxy-groups:
   - PP4
   - PP5
   - PP6
+  - PP7
+  - PP8
   - Ping PP1
   - Ping PP2
   - Ping PP3
   - Ping PP4 
   - Ping PP5
   - Ping PP6
+  - Ping PP7
+  - Ping PP8
   - LB PP1
   - LB PP2
   - LB PP3
   - LB PP4
   - LB PP5
   - LB PP6
+  - LB PP7
+  - LB PP8
   - ETH1
   - MACVLAN
   - USB0
@@ -397,18 +483,24 @@ proxy-groups:
   - PP4
   - PP5
   - PP6
+  - PP7
+  - PP8
   - Ping PP1
   - Ping PP2
   - Ping PP3
   - Ping PP4 
   - Ping PP5
   - Ping PP6
+  - Ping PP7
+  - Ping PP8
   - LB PP1
   - LB PP2
   - LB PP3
   - LB PP4
   - LB PP5
   - LB PP6
+  - LB PP7
+  - LB PP8
   - ETH1
   - MACVLAN
   - USB0
@@ -459,6 +551,20 @@ proxy-groups:
   - PP6
   url: 'http://www.gstatic.com/generate_204'
   interval: '1'
+- name: Ping PP7
+  type: url-test
+  disable-udp: false
+  use:
+  - PP7
+  url: 'http://www.gstatic.com/generate_204'
+  interval: '1'
+- name: Ping PP8
+  type: url-test
+  disable-udp: false
+  use:
+  - PP8
+  url: 'http://www.gstatic.com/generate_204'
+  interval: '1'
 #================================#
 - name: LB PP1
   type: load-balance
@@ -506,6 +612,22 @@ proxy-groups:
   disable-udp: false
   use:
   - PP6
+  url: 'http://www.gstatic.com/generate_204'
+  interval: '1'
+- name: LB PP7
+  type: load-balance
+  strategy: round-robin
+  disable-udp: false
+  use:
+  - PP7
+  url: 'http://www.gstatic.com/generate_204'
+  interval: '1'
+- name: LB PP8
+  type: load-balance
+  strategy: round-robin
+  disable-udp: false
+  use:
+  - PP8
   url: 'http://www.gstatic.com/generate_204'
   interval: '1'
 #================================#
