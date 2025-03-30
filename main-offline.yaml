@@ -636,27 +636,27 @@ rule-providers:
   BlockAds:
     type: file
     behavior: classical
-    path: "./rule_provider/rules-blockads.yaml"
+    path: "./rule_provider/rule_pp/rules-blockads.yaml"
   Game:
     type: file
     behavior: classical
-    path: "./rule_provider/rules-game.yaml"
+    path: "./rule_provider/rule_pp/rules-game.yaml"
   Sosmed:
     type: file
     behavior: classical
-    path: "./rule_provider/rules-sosmed.yaml"
+    path: "./rule_provider/rule_pp/rules-sosmed.yaml"
   Stream:
     type: file
     behavior: classical
-    path: "./rule_provider/rules-stream.yaml"
+    path: "./rule_provider/rule_pp/rules-stream.yaml"
   Olshop:
     type: file
     behavior: classical
-    path: "./rule_provider/rules-olshop.yaml"
+    path: "./rule_provider/rule_pp/rules-olshop.yaml"
   Bank:
     type: file
     behavior: classical
-    path: "./rule_provider/rules-bank.yaml"
+    path: "./rule_provider/rule_pp/rules-bank.yaml"
 
 #================================#
 rules:
