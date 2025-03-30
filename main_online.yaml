@@ -644,32 +644,32 @@ rule-providers:
   BlockAds:
     type: http
     behavior: classical
-    path: "./rule_provider/rules-blockads.yaml"
+    path: "./rule_provider/rule_pp/rules-blockads.yaml"
     url: https://raw.githubusercontent.com/ElysianWhirl/test-pp-online/refs/heads/main/rule_provider/rules-blockads.yaml
   Game:
     type: http
     behavior: classical
-    path: "./rule_provider/rules-game.yaml"
+    path: "./rule_provider/rule_pp/rules-game.yaml"
     url: https://raw.githubusercontent.com/ElysianWhirl/test-pp-online/refs/heads/main/rule_provider/rules-game.yaml
   Sosmed:
     type: http
     behavior: classical
-    path: "./rule_provider/rules-sosmed.yaml"
+    path: "./rule_provider/rule_pp/rules-sosmed.yaml"
     url: https://raw.githubusercontent.com/ElysianWhirl/test-pp-online/refs/heads/main/rule_provider/rules-sosmed.yaml
   Stream:
     type: http
     behavior: classical
-    path: "./rule_provider/rules-stream.yaml"
+    path: "./rule_provider/rule_pp/rules-stream.yaml"
     url: https://raw.githubusercontent.com/ElysianWhirl/test-pp-online/refs/heads/main/rule_provider/rules-stream.yaml
   Olshop:
     type: http
     behavior: classical
-    path: "./rule_provider/rules-olshop.yaml"
+    path: "./rule_provider/rule_pp/rules-olshop.yaml"
     url: https://raw.githubusercontent.com/ElysianWhirl/test-pp-online/refs/heads/main/rule_provider/rules-olshop.yaml
   Bank:
     type: http
     behavior: classical
-    path: "./rule_provider/rules-bank.yaml"
+    path: "./rule_provider/rule_pp/rules-bank.yaml"
     url: https://raw.githubusercontent.com/ElysianWhirl/test-pp-online/refs/heads/main/rule_provider/rules-bank.yaml
 
 #================================#
