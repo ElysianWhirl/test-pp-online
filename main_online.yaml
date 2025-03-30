@@ -1,7 +1,7 @@
 proxy-providers:
   PP1:
     type: http
-    path: "./proxy_provider/PP1.yaml"
+    path: "./proxy_provider/PP/PP1.yaml"
     url: https://raw.githubusercontent.com/ElysianWhirl/test-pp-online/refs/heads/main/proxy_provider/PP1.yaml
     health-check:
       enable: true
@@ -9,7 +9,7 @@ proxy-providers:
       interval: 300
   PP2:
     type: http
-    path: "./proxy_provider/PP2.yaml"
+    path: "./proxy_provider/PP/PP2.yaml"
     url: https://raw.githubusercontent.com/ElysianWhirl/test-pp-online/refs/heads/main/proxy_provider/PP2.yaml
     health-check:
       enable: true
@@ -17,7 +17,7 @@ proxy-providers:
       interval: 300
   PP3:
     type: http
-    path: "./proxy_provider/PP3.yaml"
+    path: "./proxy_provider/PP/PP3.yaml"
     url: https://raw.githubusercontent.com/ElysianWhirl/test-pp-online/refs/heads/main/proxy_provider/PP3.yaml
     health-check:
       enable: true
@@ -25,7 +25,7 @@ proxy-providers:
       interval: 300
   PP4:
     type: http
-    path: "./proxy_provider/PP4.yaml"
+    path: "./proxy_provider/PP/PP4.yaml"
     url: https://raw.githubusercontent.com/ElysianWhirl/test-pp-online/refs/heads/main/proxy_provider/PP4.yaml
     health-check:
       enable: true
@@ -33,7 +33,7 @@ proxy-providers:
       interval: 300
   PP5:
     type: http
-    path: "./proxy_provider/PP5.yaml"
+    path: "./proxy_provider/PP/PP5.yaml"
     url: https://raw.githubusercontent.com/ElysianWhirl/test-pp-online/refs/heads/main/proxy_provider/PP5.yaml
     health-check:
       enable: true
@@ -41,7 +41,7 @@ proxy-providers:
       interval: 300
   PP6:
     type: http
-    path: "./proxy_provider/PP6.yaml"
+    path: "./proxy_provider/PP/PP6.yaml"
     url: https://raw.githubusercontent.com/ElysianWhirl/test-pp-online/refs/heads/main/proxy_provider/PP6.yaml
     health-check:
       enable: true
@@ -49,7 +49,7 @@ proxy-providers:
       interval: 300
   PP7:
     type: http
-    path: "./proxy_provider/PP6.yaml"
+    path: "./proxy_provider/PP/PP7.yaml"
     url: https://raw.githubusercontent.com/ElysianWhirl/test-pp-online/refs/heads/main/proxy_provider/PP7.yaml
     health-check:
       enable: true
@@ -57,7 +57,7 @@ proxy-providers:
       interval: 300
   PP8:
     type: http
-    path: "./proxy_provider/PP6.yaml"
+    path: "./proxy_provider/PP/PP8.yaml"
     url: https://raw.githubusercontent.com/ElysianWhirl/test-pp-online/refs/heads/main/proxy_provider/PP8.yaml
     health-check:
       enable: true
