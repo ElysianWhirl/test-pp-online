@@ -1,61 +1,61 @@
 proxy-providers:
   PP1:
     type: file
-    path: "./proxy_provider/PP1.yaml"
+    path: "./proxy_provider/PP/PP1.yaml"
     health-check:
       enable: true
       url: http://www.gstatic.com/generate_204
       interval: 300
   PP2:
     type: file
-    path: "./proxy_provider/PP2.yaml"
+    path: "./proxy_provider/PP/PP2.yaml"
     health-check:
       enable: true
       url: http://www.gstatic.com/generate_204
       interval: 300
   PP3:
     type: file
-    path: "./proxy_provider/PP3.yaml"
+    path: "./proxy_provider/PP/PP3.yaml"
     health-check:
       enable: true
       url: http://www.gstatic.com/generate_204
       interval: 300
   PP4:
     type: file
-    path: "./proxy_provider/PP4.yaml"
+    path: "./proxy_provider/PP/PP4.yaml"
     health-check:
       enable: true
       url: http://www.gstatic.com/generate_204
       interval: 300
   PP5:
     type: file
-    path: "./proxy_provider/PP5.yaml"
+    path: "./proxy_provider/PP/PP5.yaml"
     health-check:
       enable: true
       url: http://www.gstatic.com/generate_204
       interval: 300
   PP6:
     type: file
-    path: "./proxy_provider/PP6.yaml"
+    path: "./proxy_provider/PP/PP6.yaml"
     health-check:
       enable: true
       url: http://www.gstatic.com/generate_204
       interval: 300
   PP7:
     type: file
-    path: "./proxy_provider/PP7.yaml"
+    path: "./proxy_provider/PP/PP7.yaml"
     health-check:
       enable: true
       url: http://www.gstatic.com/generate_204
       interval: 300
   PP8:
     type: file
-    path: "./proxy_provider/PP8.yaml"
+    path: "./proxy_provider/PP/PP8.yaml"
     health-check:
       enable: true
       url: http://www.gstatic.com/generate_204
       interval: 300
-
+#================================#
 proxy-groups:
 - name: PP1
   type: select
