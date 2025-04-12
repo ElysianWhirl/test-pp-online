@@ -55,7 +55,7 @@ proxy-providers:
       enable: true
       url: http://www.gstatic.com/generate_204
       interval: 300
-#================================#
+
 proxy-groups:
 - name: PP1
   type: select
@@ -130,40 +130,6 @@ proxy-groups:
   url: 'http://cp.cloudflare.com/generate_204'
   interval: '1'
 #================================#
-- name: ETH1
-  type: select
-  interface-name: eth1
-  disable-udp: false
-  proxies:
-  - PP1
-  - PP2
-  - PP3
-  - PP4
-  - PP5
-  - PP6
-  - PP7
-  - PP8
-  - Ping PP1
-  - Ping PP2
-  - Ping PP3
-  - Ping PP4 
-  - Ping PP5
-  - Ping PP6
-  - Ping PP7
-  - Ping PP8
-  - LB PP1
-  - LB PP2
-  - LB PP3
-  - LB PP4
-  - LB PP5
-  - LB PP6
-  - LB PP7
-  - LB PP8
-  - Relay Proxy PP1 > PP2
-  - REJECT
-  - DIRECT
-  url: 'http://www.gstatic.com/generate_204'
-  interval: '300'
 - name: MACVLAN
   type: select
   interface-name: macvlan
@@ -198,9 +164,9 @@ proxy-groups:
   - DIRECT
   url: 'http://www.gstatic.com/generate_204'
   interval: '300'
-- name: USB0
+- name: ETH1
   type: select
-  interface-name: usb0
+  interface-name: eth1
   disable-udp: false
   proxies:
   - PP1
@@ -232,9 +198,43 @@ proxy-groups:
   - DIRECT
   url: 'http://www.gstatic.com/generate_204'
   interval: '300'
-- name: USB1
+- name: ETH2
   type: select
-  interface-name: usb1
+  interface-name: eth2
+  disable-udp: false
+  proxies:
+  - PP1
+  - PP2
+  - PP3
+  - PP4
+  - PP5
+  - PP6
+  - PP7
+  - PP8
+  - Ping PP1
+  - Ping PP2
+  - Ping PP3
+  - Ping PP4 
+  - Ping PP5
+  - Ping PP6
+  - Ping PP7
+  - Ping PP8
+  - LB PP1
+  - LB PP2
+  - LB PP3
+  - LB PP4
+  - LB PP5
+  - LB PP6
+  - LB PP7
+  - LB PP8
+  - Relay Proxy PP1 > PP2
+  - REJECT
+  - DIRECT
+  url: 'http://www.gstatic.com/generate_204'
+  interval: '300'
+- name: ETH3
+  type: select
+  interface-name: eth3
   disable-udp: false
   proxies:
   - PP1
@@ -267,15 +267,15 @@ proxy-groups:
   url: 'http://www.gstatic.com/generate_204'
   interval: '300'
 #================================#
-- name: LB ETH1 & MACVLAN & USB0 & USB1
+- name: LB MACVLAN & ETH1 & ETH2 & ETH3
   type: load-balance
   strategy: round-robin
   disable-udp: false
   proxies:
-  - USB0
-  - USB1
-  - ETH1
   - MACVLAN
+  - ETH1
+  - ETH2
+  - ETH3
   url: 'http://www.gstatic.com/generate_204'
   interval: '1'
 #================================#
@@ -283,7 +283,7 @@ proxy-groups:
   type: select
   disable-udp: false
   proxies:
-  - LB ETH1 & MACVLAN & USB0 & USB1
+  - LB MACVLAN & ETH1 & ETH2 & ETH3
   - PP1
   - PP2
   - PP3
@@ -308,10 +308,10 @@ proxy-groups:
   - LB PP6
   - LB PP7
   - LB PP8
-  - ETH1
   - MACVLAN
-  - USB0
-  - USB1
+  - ETH1
+  - ETH2
+  - ETH3
   - Relay Proxy PP1 > PP2
   url: 'http://cp.cloudflare.com/generate_204'
   interval: '300'
@@ -345,10 +345,10 @@ proxy-groups:
   - LB PP6
   - LB PP7
   - LB PP8
-  - ETH1
   - MACVLAN
-  - USB0
-  - USB1
+  - ETH1
+  - ETH2
+  - ETH3
   - Relay Proxy PP1 > PP2
   url: 'http://cp.cloudflare.com/generate_204'
   interval: '300'
@@ -382,10 +382,10 @@ proxy-groups:
   - LB PP6
   - LB PP7
   - LB PP8
-  - ETH1
   - MACVLAN
-  - USB0
-  - USB1
+  - ETH1
+  - ETH2
+  - ETH3
   - Relay Proxy PP1 > PP2
   url: 'http://cp.cloudflare.com/generate_204'
   interval: '300'
@@ -419,10 +419,10 @@ proxy-groups:
   - LB PP6
   - LB PP7
   - LB PP8
-  - ETH1
   - MACVLAN
-  - USB0
-  - USB1
+  - ETH1
+  - ETH2
+  - ETH3
   - Relay Proxy PP1 > PP2
   url: 'http://cp.cloudflare.com/generate_204'
   interval: '300'
@@ -456,10 +456,10 @@ proxy-groups:
   - LB PP6
   - LB PP7
   - LB PP8
-  - ETH1
   - MACVLAN
-  - USB0
-  - USB1
+  - ETH1
+  - ETH2
+  - ETH3
   - Relay Proxy PP1 > PP2
   url: 'http://cp.cloudflare.com/generate_204'
   interval: '300'
@@ -493,10 +493,10 @@ proxy-groups:
   - LB PP6
   - LB PP7
   - LB PP8
-  - ETH1
   - MACVLAN
-  - USB0
-  - USB1
+  - ETH1
+  - ETH2
+  - ETH3
   - Relay Proxy PP1 > PP2
   url: 'http://cp.cloudflare.com/generate_204'
   interval: '300'
